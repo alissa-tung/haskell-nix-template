@@ -2,7 +2,7 @@
 
 .PHONY: all fmt lint build
 
-all: fmt lint build
+all: fmt lint build test
 
 fmt:
 	(fd -e nix -X nixfmt {} \; -X alejandra -q {})
@@ -15,3 +15,6 @@ lint:
 
 build:
 	(cd src && cabal build)
+
+test:
+	(cd src && cabal test)

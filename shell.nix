@@ -16,11 +16,13 @@ pkgs.mkShell {
       let
         ghcPkgs = pkgs.haskell.packages.ghc9101;
       in (with ghcPkgs; [
+        (ghcWithPackages (haskellPackages: with haskellPackages; [hspec]))
+
         cabal-install
-        ghc
         haskell-language-server
         ormolu
         cabal-fmt
+        hspec-discover
       ])
     );
 }

@@ -12,3 +12,15 @@ executable foryou
   build-depends:    base ^>=4.20.0.0
   hs-source-dirs:   app
   default-language: GHC2024
+
+test-suite tests
+  import:           warnings
+  type:             exitcode-stdio-1.0
+  main-is:          Spec.hs
+  hs-source-dirs:   tests
+  build-depends:
+    , base   ^>=4.20.0.0
+    , hspec
+
+  default-language: GHC2024
+  other-modules:    TestSpec
