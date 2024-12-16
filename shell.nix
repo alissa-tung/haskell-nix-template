@@ -8,6 +8,7 @@ pkgs.mkShell {
 
       alejandra
       nixfmt-rfc-style
+      nodePackages_latest.prettier
 
       hlint
     ])

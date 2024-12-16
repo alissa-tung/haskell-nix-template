@@ -6,6 +6,7 @@ all: fmt lint build
 
 fmt:
 	(fd -e nix -X nixfmt {} \; -X alejandra -q {})
+	(prettier -w .)
 	(fd -e cabal -x cabal-fmt -i)
 	(fd -e hs -x ormolu -i)
 
