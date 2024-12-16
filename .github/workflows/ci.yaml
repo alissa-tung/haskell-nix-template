@@ -11,4 +11,5 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
       - run: |
+          nix develop --command cabal update
           nix develop --command make
